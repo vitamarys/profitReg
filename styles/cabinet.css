@@ -1,0 +1,515 @@
+.overlay-add {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+.overlay-add.active {
+  display: flex;
+}
+
+.popup-add {
+  z-index: 1001;
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.25);
+  border-radius: 6px;
+  position: relative;
+}
+.popup-add__close-btn {
+  position: absolute;
+  right: 14px;
+  top: 14px;
+  cursor: pointer;
+}
+.popup-add__title {
+  font-family: Calibri;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  margin-bottom: 40px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #000000;
+}
+.popup-add__form {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+}
+.popup-add__form__input {
+  background: #ffffff;
+  border: 1px solid #4b4b4b;
+  outline: none;
+  border-radius: 4px;
+  height: 50px;
+  padding-left: 25px;
+  font-family: Calibri;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: #000000;
+}
+.popup-add__form__label {
+  width: max-content;
+  font-family: Calibri;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  color: #4b4b4b;
+  position: relative;
+  top: 8px;
+  left: 19px;
+  background-color: #ffffff;
+}
+.popup-add__form__file-name {
+  display: flex;
+  align-items: center;
+}
+.popup-add__form__file-name__text {
+  font-family: Calibri;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  text-decoration-line: underline;
+  color: #000000;
+  margin-right: 10px;
+}
+.popup-add__form__file-name__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  background: #d9d9d9;
+  border-radius: 50%;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.popup-add__form__file-name__btn:hover {
+  transition: 0.3s;
+  background-color: #ff5632;
+}
+.popup-add__form__add-file {
+  font-family: Calibri;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 16px;
+  text-decoration-line: underline !important;
+  text-transform: uppercase;
+  margin-top: 10px;
+  color: #4aa148;
+  margin-bottom: 40px;
+}
+.popup-add__form__submit {
+  cursor: pointer;
+  font-family: Calibri;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 16px 35px;
+  text-align: center;
+  text-transform: uppercase;
+  outline: none;
+  width: 280px;
+  color: #ffffff;
+  background: linear-gradient(270deg, #4aa148 0%, #7ec669 100%), linear-gradient(270deg, #ff5632 0%, #ef441f 100%);
+  box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.2);
+  border: none;
+  margin: 0 auto;
+  transition: 0.3s;
+}
+.popup-add__form__submit:hover {
+  box-shadow: 0px 6px 15px 0px rgba(0, 0, 0, 0.5) !important;
+  transition: 0.3s;
+}
+
+.cabinet {
+  width: 100%;
+  min-height: calc(100vh - 506px);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 30px 0 50px 0;
+  background-position: center;
+}
+.cabinet .conteiner {
+  display: flex;
+}
+
+.title {
+  position: absolute;
+  left: 0;
+  margin-bottom: 50px;
+}
+
+.cabinet__tabs {
+  display: flex;
+  flex-direction: column;
+  border-left: 2px solid #c4c4c4;
+  width: 30%;
+  height: max-content;
+  margin-top: 140px;
+}
+.cabinet__tabs__item {
+  position: relative;
+  padding-left: 20px;
+  font-family: Calibri;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  text-transform: uppercase;
+  color: #000000;
+  margin-bottom: 30px;
+}
+.cabinet__tabs__item.active {
+  transition: 0.3s;
+  color: #4aa148;
+}
+.cabinet__tabs__item.active::before {
+  content: "";
+  transition: 0.3s;
+  position: absolute;
+  left: -2px;
+  display: block;
+  width: 4px;
+  height: 35px;
+  background-color: #4aa148;
+}
+.cabinet__tabs__item:nth-last-child(1) {
+  margin-bottom: 5px;
+}
+.cabinet__tabs__item:hover::before {
+  visibility: visible;
+  opacity: 1;
+  transition: 0.3s ease-in;
+}
+
+.cabinet__tabs-body {
+  width: 70%;
+}
+
+.tabs__block {
+  margin-top: 140px;
+  display: none;
+  flex-wrap: wrap;
+  padding-top: 30px;
+  position: relative;
+  width: 100%;
+}
+.tabs__block.active {
+  display: flex;
+}
+.tabs__block__add-btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-family: Calibri;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 13px;
+  text-decoration-line: underline !important;
+  text-transform: uppercase;
+  color: #ff5632;
+}
+.tabs__block__item {
+  margin-right: 20px;
+  margin-bottom: 20px;
+  height: max-content;
+  width: calc(50% - 20px);
+  border: 1px solid #e1e1e1;
+  padding: 30px 35px;
+  display: flex;
+  flex-direction: column;
+}
+.tabs__block__item__title {
+  font-family: Calibri;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 36px;
+  color: #000000;
+  margin-bottom: 20px;
+}
+.tabs__block__item__subtitle {
+  font-family: Calibri;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  color: #4aa148;
+}
+.tabs__block__item__desc {
+  font-family: Calibri;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  margin-bottom: 20px;
+  line-height: 20px;
+}
+.tabs__block__item__file {
+  display: flex;
+  align-items: center;
+}
+.tabs__block__item__file__name {
+  font-family: Calibri;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 36px;
+  text-decoration-line: underline;
+  color: #000000;
+  margin-right: 10px;
+}
+.tabs__block__item__file__btn {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  background: #d9d9d9;
+}
+.tabs__block__item__file__btn:hover {
+  transition: 0.3s;
+  background-color: #ff5632;
+}
+.tabs__block__item__add {
+  font-family: Calibri;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 16px;
+  text-decoration-line: underline !important;
+  text-transform: uppercase;
+  margin-top: 20px;
+  color: #4aa148;
+}
+
+.balance {
+  padding: 0;
+  position: relative;
+}
+.balance__title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  font-family: Calibri;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 36px;
+  text-transform: uppercase;
+  width: 100%;
+  padding: 62px 0;
+  color: #000000;
+  border: 1px solid #4aa148;
+}
+.balance__title > .green {
+  color: #4aa148;
+}
+.balance__date-null {
+  margin-top: 30px;
+  margin-bottom: 60px;
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+}
+.balance__date-null__text {
+  margin-right: 15px;
+  font-family: Calibri;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+}
+.balance__date-null__img {
+  cursor: pointer;
+}
+.balance__date-null__img:hover + .balance__date-null__infotip {
+  display: block;
+}
+.balance__date-null__infotip {
+  padding: 30px 40px;
+  background-color: #ffffff;
+  max-width: 630px;
+  position: absolute;
+  right: 5px;
+  top: 220px;
+  display: none;
+  border: 1px solid #c4c4c4;
+  border-radius: 4px;
+  box-shadow: 0px 6px 15px 0px rgba(0, 0, 0, 0.5) !important;
+}
+.balance__date-null__infotip::before {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  right: 0px;
+  top: -12px;
+  border-top: 12px solid transparent;
+  border-right: 24px solid #ffffff;
+  border-bottom: 12px solid transparent;
+}
+.balance__date-null__infotip__text {
+  font-family: Calibri;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 36px;
+  color: #000000;
+}
+.balance__info {
+  margin-top: 60px;
+}
+.balance__info:first-child {
+  margin-top: 120px;
+}
+.balance__info__title {
+  font-family: Calibri;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 26px;
+  margin-bottom: 40px;
+}
+.balance__info__paragraf {
+  font-family: Calibri;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 36px;
+  padding-right: 40px;
+  color: #000000;
+}
+.balance__info__list {
+  list-style-type: none;
+  margin-top: 15px;
+}
+.balance__info__list__item {
+  position: relative;
+  font-family: Calibri;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 36px;
+  color: #000000;
+  padding-left: 25px;
+}
+.balance__info__list__item:before {
+  content: url(../img/Vectorb.png);
+  display: block;
+  position: absolute;
+  left: 0;
+}
+
+.document {
+  width: 100%;
+}
+.document__item {
+  margin: 0 20px 20px 0;
+  display: flex;
+  width: calc(50% - 20px);
+  padding: 30px;
+  background: linear-gradient(270deg, #6d6d6d 0%, #8c8c8c 100%), #4aa148;
+}
+.document__item:hover {
+  background: linear-gradient(270deg, #4aa148 0%, #7ec669 100%), #4aa148;
+}
+.document__item__download {
+  width: 15%;
+  display: flex;
+  flex-direction: column;
+  margin-right: 25px;
+}
+.document__item__download__btn {
+  font-family: Calibri;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 16px;
+  text-align: center;
+  text-decoration-line: underline !important;
+  text-transform: uppercase;
+  margin-top: 35px;
+  color: #ffffff;
+}
+.document__item__name {
+  width: 80%;
+}
+.document__item__name__text {
+  font-family: Calibri;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 36px;
+  color: #ffffff;
+}
+
+.setting__form {
+  width: 570px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 100px;
+}
+.setting__form__input {
+  width: 100%;
+  margin-bottom: 20px;
+  background: #ffffff;
+  border: 1px solid #e1e1e1;
+  border-radius: 4px;
+  height: 50px;
+  font-family: Calibri;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 20px;
+  outline: none;
+  color: #000000;
+  padding-left: 20px;
+}
+.setting__form__label {
+  font-family: Calibri;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  color: #4b4b4b;
+  background-color: #ffffff;
+  width: max-content;
+  position: relative;
+  top: 9px;
+  left: 15px;
+}
+.setting__form__btn {
+  margin: 0 auto;
+  max-width: 275px;
+  cursor: pointer;
+  font-family: Calibri;
+  padding: 16px 32px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  text-align: center;
+  text-transform: uppercase;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  background: linear-gradient(270deg, #4aa148 0%, #7ec669 100%), linear-gradient(270deg, #ff5632 0%, #ef441f 100%);
+  transition: 0.3s;
+}
+.setting__form__btn:hover {
+  box-shadow: 0px 6px 15px 0px rgba(0, 0, 0, 0.5) !important;
+  transition: 0.3s;
+}
+
+/*# sourceMappingURL=cabinet.css.map */
